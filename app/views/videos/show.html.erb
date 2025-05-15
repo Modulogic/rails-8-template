@@ -1,0 +1,14 @@
+<h1><%= @video.title %></h1>
+
+<p><%= @video.description %></p>
+
+<pre><%= @video.transcript %></pre>
+
+<% if @video.video_file.attached? %>
+  <video width="100%" controls>
+    <source src="<%= url_for(@video.video_file) %>"
+            type="<%= @video.video_file.content_type %>">
+  </video>
+<% end %>
+
+<%= link_to "Back to All Videos", root_path %>

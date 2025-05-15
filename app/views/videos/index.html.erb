@@ -1,0 +1,12 @@
+<!-- app/views/videos/index.html.erb -->
+<h1>All Videos</h1>
+<ul>
+  <% @videos.each do |video| %>
+    <li>
+      <%= link_to video_path(video) do %>
+        <%= video_tag video.video_file, controls: true, width: 320 %>
+        <h2><%= video.title %></h2>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
