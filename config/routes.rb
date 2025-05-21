@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Main page shows the list of videos
   root "videos#index"
 

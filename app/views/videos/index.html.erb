@@ -1,12 +1,13 @@
-<!-- app/views/videos/index.html.erb -->
 <h1>All Videos</h1>
-<ul>
+
+<ul style="list-style: none; padding: 0;">
   <% @videos.each do |video| %>
-    <li>
+    <li style="margin-bottom: 2rem; text-align: center;">
       <%= link_to video_path(video) do %>
-        <%= video_tag video.video_file, controls: true, width: 320 %>
-        <h2><%= video.title %></h2>
+        <%= render partial: "player", locals: { video: video } %>
+        <h2 style="margin-top: 0.5rem; font-weight: 600;"><%= video.title %></h2>
       <% end %>
     </li>
   <% end %>
 </ul>
+

@@ -31,6 +31,9 @@
   </head>
 
   <body>
+  <%= render "shared/flash_messages" %>
+  <div style="max-width: 600px; margin-inline: auto; padding: 1rem;">
     <%= yield %>
-  </body>
+  </div>
+</body>
 </html>
